@@ -1,0 +1,9 @@
+[
+    {
+        "id": "1",
+        "name": "Ejemplo de Serie",
+        "coverImage": "https://via.placeholder.com/600x400",
+        "youtubeLink": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "genre": "Comedia"
+    }
+]

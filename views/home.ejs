@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">Home</h1>
+        <nav class="nav">
+            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link" href="/series">Series</a>
+            <a class="nav-link" href="/genres">Genres</a>
+        </nav>
+        <div>
+            <h2 class="my-4">Series</h2>
+
+            <form method="GET" action="/" class="form-inline mb-4">
+                <label for="genre" class="mr-2">Filter by Genre:</label>
+                <select id="genre" name="genre" class="form-control mr-2">
+                    <option value="">All</option>
+                    <% genres.forEach(genre => { %>
+                        <option value="<%= genre.name %>"><%= genre.name %></option>
+                    <% }) %>
+                </select>
+                <button type="submit" class="btn btn-primary">Filter</button>
+            </form>
+
+            <div class="row">
+                <% series.forEach(serie => { %>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img class="card-img-top" src="<%= serie.coverImage %>" alt="<%= serie.name %>">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= serie.name %></h5>
+                                <p class="card-text">Genre: <%= serie.genre %></p>
+                                <a href="/series/<%= serie.id %>" class="btn btn-info">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
